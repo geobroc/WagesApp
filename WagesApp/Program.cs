@@ -96,6 +96,10 @@ namespace WagesApp
             // Enter and store employee name
             string employeeName = CheckName();
 
+            Console.Clear();
+
+            Console.WriteLine("--------- Employee summary --------");
+
             // Display employee name
             Console.WriteLine(employeeName);
 
@@ -131,12 +135,32 @@ namespace WagesApp
 
         static void Main(string[] args)
         {
+            Console.WriteLine(@" __    __                          _               "+"\n"+
+                              @"/ / /\ \ \__ _  __ _  ___  ___    /_\  _ __  _ __  "+"\n" +
+                              @"\ \/_ \/ / _` |/ _` |/ _ \/ __|  //_\\| '_ \| '_ \ "+"\n"+
+                              @" \_/ \_/ \__,_|\__, |\___||___/ \_/ \_/ .__/| .__/  "+"\n" +
+                              @"                |___/                 |_|   |_|    "+"\n");
+            Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+            Console.WriteLine(
+                "INTRODUCTION:\n"+
+                "Wages App will calculate the wages for each employee \nand display the hours worked for the week."+
+                "It will \nproduce an employee summary, showing the tax to be \ndeducted and the total amount owned after tax.\n"+
+                "Lastly the Wages App will display the employee \nthat has worked the most hours.");
+            Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+
+            Console.WriteLine("Press enter to continue...");
+            Console.ReadLine();
+            Console.Clear();
+
             string flagMain = "";
             while (!flagMain.Equals("XXX"))
             {
+                Console.WriteLine("---------- Employee Details ----------\n");
                 OneEmployee();
 
                 flagMain = CheckFlag();
+
+                Console.Clear();
             }
             Console.WriteLine($"{topEarner} has the most hours worked: {topEarnerHours}hrs");
         }
